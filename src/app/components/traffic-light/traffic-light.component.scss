@@ -1,0 +1,52 @@
+.traffic-light {
+    color: #cdcdcd;
+    display: flex;
+    justify-content: center;
+    width: 75px;
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom:5px ;
+  }
+
+  
+  .light {
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+  }
+  
+  .red {
+    color: red;
+    top: 30px;
+  }
+  
+  .yellow {
+    color: yellow;
+    top: 80px;
+  }
+  
+  .green {
+    color: green;
+    top: 130px;
+  }
+  .red-light{
+    background-color: #ff0000;
+  }
+  .yellow-light{
+    background-color: yellow;
+  }
+  .green-light{
+    background-color: green;
+  }
+  
+  .active {
+    background-color: #ff0000; /* Change color based on active state */
+  }

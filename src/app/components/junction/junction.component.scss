@@ -1,0 +1,91 @@
+.junction{
+    margin: auto;
+    width: 750px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: greenyellow;
+    background-image: url('../../../assets/grass.png');
+}
+
+.road{
+    display: flex;
+    background: grey;
+    color: aliceblue;  
+    position: relative;
+    overflow: hidden;
+}
+
+.east-to-west-road{
+    width: 100%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .info{
+      margin-left: 25px;
+    }
+}
+
+.north-to-south-road{
+    height : 100%;
+    width: 100px;
+    position: absolute;
+    left: calc(50%  - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .info{
+        margin-top: 25px;
+      }
+      
+}
+.road-active{
+    z-index: 50;
+}
+
+.n-s-car {
+    width: 50px;
+    height: 100px;
+    background-color: gray; /* Red car */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: moveCarDown 2s linear infinite; /* Animation */
+    background-image: url('../../../assets/car-from-above.png');
+    background-repeat: no-repeat;
+    background-size: 50px 100px;
+  }
+
+.w-e-car {
+    width: 100px;
+    height: 50px;
+    background-color: gray; /* Red car */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: moveCarRight 2s linear infinite; /* Animation */
+    background-image: url('../../../assets/car-left-to-right.png');
+    background-repeat: no-repeat;
+    background-size:  100px 50px;
+  }
+
+  @keyframes moveCarRight {
+    0% {
+      left: -100px; /* Car starts from the left */
+    }
+    100% {
+      left: calc(100% - 40px); /* Car reaches the end of the road */
+    }
+  }
+
+  @keyframes moveCarDown {
+    0% {
+      top: -100px; /* Car starts from the left */
+    }
+    100% {
+      top: calc(100% - 40px); /* Car reaches the end of the road */
+    }
+  }

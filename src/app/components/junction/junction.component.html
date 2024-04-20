@@ -1,0 +1,11 @@
+<div class="junction">
+
+    <div class="road north-to-south-road"  [class]="{'road-active': northToSouthGreen}">
+        <div class="n-s-car" *ngIf="northCars && northCars>0 && northToSouthGreen && !this.yellowLight"></div>
+       <div class="info"> #N-S: {{northCars}}</div>
+    </div>
+    <div class="road east-to-west-road" [class]="{'road-active': !northToSouthGreen}">
+        <div class="w-e-car" *ngIf="eastCars && eastCars>0 && !northToSouthGreen && !this.yellowLight"></div>
+        <div class="info">  #W-E: {{eastCars}}</div> 
+    </div>
+</div>
