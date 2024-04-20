@@ -18,13 +18,17 @@ export class AppComponent implements OnInit {
   northCars: number = 5
   eastCars: number = 3
 
-  constructor(private trafficService: TrafficService ){}
+  constructor(private trafficService: TrafficService) {}
 
   ngOnInit(){
     this.trafficService.initTrafficLight(this.northCars, this.eastCars);
     this.trafficService.adjustTrafficLights();
     this.startTraffic();
     this.trafficService.startCarArrival();
+    this.trafficService.getTrafficUpdates().subscribe((data: any) => {
+      this.northCars = data.northTrafficCount;
+      this.eastCars = data.eastTrafficCount;
+    });
   }
 
   startTraffic() {
@@ -45,7 +49,7 @@ export class AppComponent implements OnInit {
   checkTrafficLights(){
     interval(2000) // min time to traffic light to change
     .pipe(
-      takeWhile(() => this.trafficService.northTrafficCount == 0 || this.eastCars == 0) // Continue until there are no more cars
+      takeWhile(() => this.northCars == 0 || this.eastCars == 0) // Continue until there are no more cars
     )
     .subscribe(() => {
       this.trafficService.adjustTrafficLights();

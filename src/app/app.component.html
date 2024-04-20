@@ -15,17 +15,18 @@
       </div>
     
     </section>
+
     <section class="page-section bottom">
       <div class="action-buttons-cars-panel">
-        <div class="add-cars-title">Add remove cars:</div>
+        <div class="add-cars-title">Add / Remove cars:</div>
         <div class="action-btn-container">
           <section class="action-btn-section">
             <div class="action-cars-btn" (click)="addTraffic('fromNorth')">North to South +</div>
             <div class="action-cars-btn" (click)="addTraffic('fromEast')">East to west +</div>
           </section>
           <section  class="action-btn-section">
-            <div class="action-cars-btn" (click)="removeTraffic('fromNorth')">North to South -</div>
-            <div class="action-cars-btn" (click)="removeTraffic('fromEast')">East to west -</div>
+            <div class="action-cars-btn" [class]="{'disabled': northCars <= 0}" (click)="removeTraffic('fromNorth')">North to South -</div>
+            <div class="action-cars-btn" [class]="{'disabled': eastCars <= 0}" (click)="removeTraffic('fromEast')">East to west -</div>
           </section>
         </div>
 

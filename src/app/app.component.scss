@@ -44,9 +44,16 @@
         cursor: pointer;
         background-color: lightgray;
     }
-    
+
     .action-cars-btn:hover{
         background-color: darkgray;
+    }
+    .disabled{
+        opacity: 0.5;
+    }
+    .disabled:hover{
+        cursor: not-allowed;
+        background-color: lightgray;
     }
 }
 

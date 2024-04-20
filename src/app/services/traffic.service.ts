@@ -79,9 +79,9 @@ export class TrafficService {
   }
 
   manuallyRemoveTraffic(diraction:string){
-    if(diraction == 'fromNorth'){
+    if(diraction == 'fromNorth' && this.northTrafficCount > 0){
       this.northTrafficCount--; 
-    }else{
+    }else if(this.eastTrafficCount > 0){
       this.eastTrafficCount--;
     }
     this.adjustTrafficLights();
