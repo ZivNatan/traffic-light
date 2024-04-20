@@ -6,6 +6,7 @@
     padding: 20px;
     border-radius: 10px;
     margin: auto;
+
     .traffic-light-container{
         display: flex;
         width: 250px;
@@ -13,22 +14,25 @@
         margin: auto;
     }
 
- .page-section{
-    padding-bottom: 40px;
- }
- .action-btn-container{
-    display: flex;
-    flex-direction: column;
- }
- .action-btn-section{
-    display: flex;
- }
+    .page-section{
+        padding-bottom: 40px;
+    }
+
+    .action-btn-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .action-btn-section{
+        display: flex;
+    }
 
     .action-buttons-cars-panel{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .action-cars-btn{
         display: flex;
         justify-content: center;
@@ -39,11 +43,10 @@
         margin: 2px;
         cursor: pointer;
         background-color: lightgray;
-
     }
+    
     .action-cars-btn:hover{
         background-color: darkgray;
-        
     }
 }
 

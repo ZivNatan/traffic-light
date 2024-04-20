@@ -21,11 +21,9 @@ export class AppComponent implements OnInit {
   constructor(private trafficService: TrafficService ){}
 
   ngOnInit(){
-
     this.trafficService.initTrafficLight(this.northCars, this.eastCars);
     this.trafficService.adjustTrafficLights();
     this.startTraffic();
-    // this.checkTrafficLights();
     this.trafficService.startCarArrival();
   }
 
@@ -43,6 +41,7 @@ export class AppComponent implements OnInit {
    
       });
   }
+
   checkTrafficLights(){
     interval(2000) // min time to traffic light to change
     .pipe(
@@ -51,7 +50,6 @@ export class AppComponent implements OnInit {
     .subscribe(() => {
       this.trafficService.adjustTrafficLights();
     });
-
   }
 
   addTraffic(diraction:string){

@@ -29,14 +29,11 @@ export class TrafficService {
   }
 
   startCarArrival() {
-
     // Emit a value every 10 to 30 seconds
     interval(this.getRandomInterval()).subscribe(() => {
       // Simulate cars arriving along each road
       const randomValue = Math.round(Math.random())
-
       this.randomArrived();
-  
     });
   }
 
@@ -46,14 +43,12 @@ export class TrafficService {
   }
 
   randomArrived() {
-      // Generate a random number between 3 and 7
+    // Generate a random number between 3 and 7
     const randomCars = Math.floor(Math.random() * (7 - 3 + 1) + 3)
-    // Add the random number to northTrafficCount
-   
     if(!this.diractionChanged){
       this.updateCars( randomCars)
     } else {
-      // Delay the execution by 1 second using RxJS delay operator
+      // Delay the execution by 1 second
       of( this.updateCars(randomCars)).pipe(
         delay(1000)
       ).subscribe();
@@ -70,9 +65,7 @@ export class TrafficService {
       }else{
         this.eastTrafficCount++;
       }
-
     }
-     
   }
 
   manuallyAddTraffic(diraction:string) {
@@ -81,20 +74,18 @@ export class TrafficService {
     }else{
       this.eastTrafficCount++;
     }
- 
     this.adjustTrafficLights();
     this.emitData();
   }
+
   manuallyRemoveTraffic(diraction:string){
     if(diraction == 'fromNorth'){
       this.northTrafficCount--; 
     }else{
       this.eastTrafficCount--;
     }
- 
     this.adjustTrafficLights();
     this.emitData();
-
   }
 
   // Method to simulate cars crossing the junction
@@ -144,8 +135,6 @@ export class TrafficService {
       diractionChanged: this.diractionChanged,
     });
   }
-
-
 
   // Method to allow components to subscribe to traffic data and traffic light states
   getTrafficUpdates() {

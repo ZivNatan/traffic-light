@@ -13,11 +13,11 @@ import { CommonModule } from '@angular/common';
 export class JunctionComponent implements OnInit{
    northCars:number =0;
    eastCars:number =0;
-   northToSouthGreen: boolean = false
-   yellowLight= false
+   northToSouthGreen: boolean = false;
+   yellowLight= false;
+
    constructor(private trafficService: TrafficService) { }
 
-   
    ngOnInit(): void {
     // Subscribe to traffic updates
     this.trafficService.getTrafficUpdates().subscribe((data: any) => {
@@ -25,7 +25,6 @@ export class JunctionComponent implements OnInit{
       this.eastCars = data.eastTrafficCount;
       this.northToSouthGreen = data.northToSouthGreen;
       this.yellowLight = data.diractionChanged
-      
     });
   }
 

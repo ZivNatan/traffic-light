@@ -39,9 +39,9 @@
     align-items: center;
     .info{
         margin-top: 25px;
-      }
-      
+    }  
 }
+
 .road-active{
     z-index: 50;
 }
@@ -57,7 +57,7 @@
     background-image: url('../../../assets/car-from-above.png');
     background-repeat: no-repeat;
     background-size: 50px 100px;
-  }
+}
 
 .w-e-car {
     width: 100px;
@@ -72,20 +72,20 @@
     background-size:  100px 50px;
   }
 
-  @keyframes moveCarRight {
+@keyframes moveCarRight {
     0% {
-      left: -100px; /* Car starts from the left */
+        left: -100px; /* Car starts from the left */
     }
     100% {
-      left: calc(100% - 40px); /* Car reaches the end of the road */
+        left: calc(100% - 40px); /* Car reaches the end of the road */
     }
-  }
+}
 
-  @keyframes moveCarDown {
+@keyframes moveCarDown {
     0% {
-      top: -100px; /* Car starts from the left */
+        top: -100px; /* Car starts from the left */
     }
     100% {
-      top: calc(100% - 40px); /* Car reaches the end of the road */
+        top: calc(100% - 40px); /* Car reaches the end of the road */
     }
-  }
+}

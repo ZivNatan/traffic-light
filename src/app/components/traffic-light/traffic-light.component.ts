@@ -20,18 +20,15 @@ export class TrafficLightComponent implements OnInit {
     // Subscribe to traffic updates
     this.trafficService.getTrafficUpdates().subscribe((data: any) => {
       // Update traffic light state based on data received from the service
-
       this.redOn = this.name === 'N-S' ? !data.northToSouthGreen : data.northToSouthGreen;
       this.greenOn = this.name === 'N-S' ? data.northToSouthGreen : !data.northToSouthGreen;
-
       this.yellowOn = data.diractionChanged
-
-       if( this.greenOn && this.yellowOn){
-        this.greenOn =false;
-        this.redOn = true;
-       }else if( this.redOn && this.yellowOn) {
-        this.redOn = false;
-       }
+      if( this.greenOn && this.yellowOn){
+      this.greenOn =false;
+      this.redOn = true;
+      }else if( this.redOn && this.yellowOn) {
+      this.redOn = false;
+      }
     });
   }
 }
